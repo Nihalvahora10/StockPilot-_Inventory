@@ -1,15 +1,8 @@
 services:
   api:
     build: .
+    ports:a
     ports:
-      - "8000:8000"
-    environment:
-      APP_NAME: StockPilot API
-      ENVIRONMENT: development
-      SECRET_KEY: local-compose-secret-change-me
-      ACCESS_TOKEN_EXPIRE_MINUTES: 60
-      DATABASE_URL: postgresql+psycopg://stockpilot:stockpilot@db:5432/stockpilot
-      CORS_ORIGINS: http://localhost:3000
     depends_on:
       db:
         condition: service_healthy
