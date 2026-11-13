@@ -5,15 +5,7 @@ services:
     ports:
     depends_on:
       db:
-        condition: service_healthy
-  db:
-    image: postgres:16-alpine
-    environment:
-      POSTGRES_DB: stockpilot
-      POSTGRES_USER: stockpilot
-      POSTGRES_PASSWORD: stockpilot
-    ports:
-      - "5432:5432"
+        condition: service_healthya
     volumes:
       - stockpilot_data:/var/lib/postgresql/data
     healthcheck:
